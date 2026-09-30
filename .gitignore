@@ -8,9 +8,6 @@ dist-ssr
 # Локальные файлы
 *.local
 
-# Референс для разработки (не публикуем)
-ref_page.html
-
 # IDE
 .idea/
 .vscode/
