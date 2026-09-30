@@ -1,0 +1,25 @@
+# Зависимости
+node_modules
+
+# Сборка
+dist
+dist-ssr
+
+# Локальные файлы
+*.local
+
+# Референс для разработки (не публикуем)
+ref_page.html
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# ОС
+.DS_Store
+Thumbs.db
+
+# Логи
+*.log
+npm-debug.log*

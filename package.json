@@ -1,0 +1,29 @@
+{
+  "name": "code-retreat-russia",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@fontsource-variable/manrope": "^5.2.5",
+    "@fontsource-variable/unbounded": "^5.2.5",
+    "@fontsource/jetbrains-mono": "^5.2.5",
+    "embla-carousel-auto-scroll": "^8.6.0",
+    "embla-carousel-react": "^8.6.0",
+    "lucide-react": "^0.545.0",
+    "motion": "^12.23.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "@vitejs/plugin-react": "^4.5.0",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5"
+  }
+}
