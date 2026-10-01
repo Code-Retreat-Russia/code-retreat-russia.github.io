@@ -80,11 +80,11 @@ export function Hero() {
             </div>
             <pre>
               <code>
-                <span className="tok-c"># вечер пятницы, 19:00</span>
+                <span className="tok-c"># суббота, 10:00</span>
                 {'\n'}
                 <span className="tok-k">while</span> (room.length) {'{'}
-                {'\n'}  pair = shuffle(people)
-                {'\n'}  <span className="tok-f">round</span>(kata, <span className="tok-n">25</span>)
+                {'\n'}  pair = meet(people)
+                {'\n'}  <span className="tok-f">round</span>(kata, <span className="tok-n">60</span>)
                 {'\n'}  discuss(pair)
                 {'\n'}  delete(code) <span className="tok-c"># навсегда</span>
                 {'\n'}{'}'}
