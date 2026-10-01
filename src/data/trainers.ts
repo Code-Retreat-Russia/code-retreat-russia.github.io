@@ -1,63 +1,75 @@
 /**
- * Тренеры и активные участники.
+ * Путь к файлу из public/ относительно корня сайта.
  *
- * ВНИМАНИЕ: имена и роли ниже — placeholder-структура.
- * Замените на реальных людей сообщества, когда данные подтверждены.
- *
- * Фотографии кладите в public/images/trainers/<id>.jpg
- * (пока используются генерируемые SVG-плейсхолдеры — см. src/components/Avatar).
+ * В данных храним путь без ведущего слэша ('images/trainers/x.jpg'), потому что
+ * сборка живёт и на github.io, и на собственном домене (base: './' в vite.config.ts).
+ * Жёсткий '/images/...' сломался бы при размещении в подкаталоге.
  */
+import { asset } from "../utils/asset";
 
 export interface Trainer {
-  id: string;
-  name: string;
-  role: string;
-  focus: string;
-  /** Путь к реальному фото; если null — рисуется плейсхолдер */
-  photo: string | null;
+    id: string;
+    name: string;
+    role: string;
+    /** Необязательное уточнение к роли — только если оно подтверждено источником */
+    focus?: string;
+    /** Путь к реальному фото; если null — рисуется плейсхолдер */
+    photo: string | null;
 }
 
 export const trainers: Trainer[] = [
-  {
-    id: 'trainer-1',
-    name: 'Имя Фамилия',
-    role: 'Тренер, TDD-практик',
-    focus: 'Ведёт сессии, помогает командам замедлиться ради качества',
-    photo: null,
-  },
-  {
-    id: 'trainer-2',
-    name: 'Имя Фамилия',
-    role: 'Тренер, clean code',
-    focus: 'Разбирает решения и спрашивает «а зачем тут ещё один слой?»',
-    photo: null,
-  },
-  {
-    id: 'trainer-3',
-    name: 'Имя Фамилия',
-    role: 'Фасилитатор',
-    focus: 'Следит, чтобы ретроспектива была честной, а не вежливой',
-    photo: null,
-  },
-  {
-    id: 'trainer-4',
-    name: 'Имя Фамилия',
-    role: 'Тренер, архитектура',
-    focus: 'Показывает, как границы модулей спасают нервные клетки',
-    photo: null,
-  },
-  {
-    id: 'trainer-5',
-    name: 'Имя Фамилия',
-    role: 'Участник со стажем',
-    focus: 'Приходит на каждую встречу и всегда приносит идеи для ретро',
-    photo: null,
-  },
-  {
-    id: 'trainer-6',
-    name: 'Имя Фамилия',
-    role: 'Тренер, pair programming',
-    focus: 'Учит договариваться за одним клавиатурным штурвалом',
-    photo: null,
-  },
+    {
+        id: "sergey-lobin",
+        name: "Сергей Лобин",
+        role: "Тренер по Скраму и инженерке, scrum.ru",
+        photo: asset("images/trainers/sergey-lobin.jpg"),
+    },
+    {
+        id: "svetlana-krivenko",
+        name: "Светлана Кривенко",
+        role: "Тренер по инженерным практикам",
+        photo: asset("images/trainers/svetlana-krivenko.jpg"),
+    },
+    {
+        id: "andrey-marschantsev",
+        name: "Андрей Маршанцев",
+        role: "Тех лид, МТС-банк",
+        photo: asset("images/trainers/andrey-marschantsev.jpg"),
+    },
+    {
+        id: "artem-krotov",
+        name: "Артем Кротов",
+        role: "Developer & Scrum Master",
+        photo: asset("images/trainers/artem-krotov.jpg"),
+    },
+    {
+        id: "zlata-zanina",
+        name: "Злата Занина",
+        role: "Engineering manager",
+        photo: asset("images/trainers/zlata-zanina.jpg"),
+    },
+    {
+        id: "anna-korotkova",
+        name: "Анна Короткова",
+        role: "Java/Kotlin Developer",
+        photo: asset("images/trainers/anna-korotkova.jpg"),
+    },
+    {
+        id: "julia-fatkullina",
+        name: "Юлия Фаткуллина",
+        role: "Senior .NET/Kotlin Developer",
+        photo: asset("images/trainers/julia-fatkullina.jpg"),
+    },
+    {
+        id: "ilya-ilynykh",
+        name: "Илья Ильиных",
+        role: "Go-разработчик (ex-java)",
+        photo: asset("images/trainers/ilya-ilynykh.jpg"),
+    },
+    {
+        id: "nikita-chursin",
+        name: "Никита Чурсин",
+        role: "Разработчик, тренер по TDD",
+        photo: asset("images/trainers/nikita-chursin.jpg"),
+    },
 ];

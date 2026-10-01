@@ -32,14 +32,11 @@ export function Trainers() {
                 ) : (
                   <Avatar id={t.id} name={t.name} className="trainer__avatar" />
                 )}
-                <span className="trainer__badge mono" aria-hidden="true">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
               </div>
               <div className="trainer__body">
                 <h3 className="trainer__name">{t.name}</h3>
                 <p className="trainer__role mono">{t.role}</p>
-                <p className="trainer__focus">{t.focus}</p>
+                {t.focus && <p className="trainer__focus">{t.focus}</p>}
               </div>
             </Reveal>
           ))}
