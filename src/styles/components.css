@@ -807,95 +807,127 @@
   background: rgba(225, 255, 87, 0.06);
 }
 
-/* ---------- Gallery ---------- */
+/* ---------- Languages (секция «Код») ---------- */
 
-.gallery__grid {
+.langs__grid {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.25rem;
-}
-
-@media (min-width: 600px) {
-  .gallery__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1000px) {
-  .gallery__grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-.gallery__cell--1 {
-  grid-column: span 1;
-}
-
-@media (min-width: 1000px) {
-  .gallery__cell--1 {
-    grid-column: span 2;
-    grid-row: span 2;
-  }
-}
-
-.gallery__tile {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
-  min-height: 180px;
-  padding: 1.5rem;
+}
+
+@media (min-width: 700px) {
+  .langs__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .langs__grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.langs__cell {
+  display: flex;
+}
+
+/**
+ * --lang-color приходит инлайном из data/languageCards.ts.
+ * До наведения карточка монохромная: цвет проявляет сразу и иконку, и рамку,
+ * и название — иначе получаются три несинхронных ховера.
+ */
+.lang-card {
+  position: relative;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.5rem 1.25rem 1.25rem;
   background: var(--bg-card);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   text-decoration: none;
   color: var(--ink);
-  transition: border-color 0.3s, transform 0.3s var(--ease-out), background 0.3s;
+  transition:
+    border-color 0.3s var(--ease-out),
+    background 0.3s var(--ease-out),
+    transform 0.3s var(--ease-out);
 }
 
-@media (min-width: 1000px) {
-  .gallery__cell--1 .gallery__tile {
-    min-height: 380px;
-  }
-}
-
-.gallery__tile:hover {
-  border-color: var(--acid);
+.lang-card:hover,
+.lang-card:focus-visible {
+  border-color: var(--lang-color, var(--acid));
   transform: translateY(-3px);
-  background: rgba(225, 255, 87, 0.03);
 }
 
-.gallery__tile-top {
-  color: var(--acid);
+.lang-card:hover {
+  background: color-mix(in srgb, var(--lang-color, var(--acid)) 7%, var(--bg-card));
+}
+
+.lang-card__icon svg {
+  display: block;
+  width: 40px;
+  height: 40px;
+  fill: var(--ink-faint);
+  transition: fill 0.3s var(--ease-out);
+}
+
+.lang-card:hover .lang-card__icon svg,
+.lang-card:focus-visible .lang-card__icon svg {
+  fill: var(--lang-color, var(--acid));
+}
+
+.lang-card__label {
+  margin-top: 0.75rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
   font-weight: 700;
+  line-height: 1.2;
+  transition: color 0.3s var(--ease-out);
 }
 
-.gallery__tile-hint {
-  color: var(--ink-dim);
-  font-size: 0.95rem;
-  line-height: 1.5;
+.lang-card:hover .lang-card__label,
+.lang-card:focus-visible .lang-card__label {
+  color: var(--lang-color, var(--acid));
 }
 
-.gallery__tile-arrow {
-  align-self: flex-end;
+.lang-card__repo {
   color: var(--ink-faint);
-  transition: color 0.2s, transform 0.3s var(--ease-out);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  overflow-wrap: anywhere;
 }
 
-.gallery__tile:hover .gallery__tile-arrow {
-  color: var(--acid);
-  transform: translate(3px, -3px);
+.lang-card__arrow {
+  position: absolute;
+  top: 1.15rem;
+  right: 1.15rem;
+  color: var(--ink-faint);
+  transition:
+    color 0.25s,
+    transform 0.3s var(--ease-out);
 }
 
-.gallery__marquee {
+.lang-card:hover .lang-card__arrow,
+.lang-card:focus-visible .lang-card__arrow {
+  color: var(--lang-color, var(--acid));
+  transform: translate(2px, -2px);
+}
+
+.langs__all {
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+.langs__marquee {
   margin-top: clamp(3rem, 6vw, 5rem);
   overflow: hidden;
 }
 
-.gallery__marquee-word {
+.langs__marquee-word {
   display: inline-flex;
   font-family: var(--font-display);
   font-size: clamp(1.2rem, 3vw, 2.5rem);

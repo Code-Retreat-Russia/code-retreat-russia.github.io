@@ -28,13 +28,13 @@ export function Footer() {
           </ul>
           <ul className="footer__list">
             <li>
-              <a href={externalLinks.coderetreat} target="_blank" rel="noopener noreferrer">
+              <a href={externalLinks.codeRetreat} target="_blank" rel="noopener noreferrer">
                 coderetreat.org
               </a>
             </li>
             <li>
               <a href={externalLinks.scrumRu} target="_blank" rel="noopener noreferrer">
-                Код-ретриты в России
+                Scrum.Ru
               </a>
             </li>
           </ul>

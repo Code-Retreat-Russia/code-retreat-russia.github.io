@@ -11,9 +11,9 @@ export interface Stat {
 }
 
 export const communityStats: Stat[] = [
-    { value: "5+", label: "встреч проведено" },
-    { value: "200+", label: "разработчиков прошли через сессии" },
-    { value: "2+", label: "городов, где мы собирались" },
-    { value: "10+", label: "тренеров ведут практики" },
-    { value: "20+", label: "часов кода в год" },
+    { value: "5+", label: "встреч" },
+    { value: "200+", label: "разработчиков" },
+    { value: "2+", label: "городов" },
+    { value: "10+", label: "тренеров" },
+    { value: "1000+", label: "часов кода в год" },
 ];

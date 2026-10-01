@@ -1,16 +1,21 @@
+import { type CSSProperties } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { Marquee } from "../animations/Marquee";
 import { Reveal } from "../animations/Reveal";
 import { sourceCode } from "../data/content";
-import { socialLinks } from "../data/socialLinks";
+import { languageCards, orgUrl } from "../data/languageCards";
 
 /**
- * «Посмотреть, как это было»: фотоархив живёт в соцсетях,
- * поэтому секция — коллаж из плиток-ссылок + бегущая строка-напоминание.
+ * «Код»: шаблоны проектов для Coding Dojo по языкам.
+ *
+ * Иконка бесцветная, пока на карточку не навелись — тогда она и рамка
+ * заливаются фирменным цветом языка (он приходит в --lang-color).
+ * Так сетка читается как один монохромный ряд, а цвет становится
+ * реакцией на действие пользователя, а не шумом.
  */
 export function SourceCode() {
     return (
-        <section className="section section--soft gallery" id="sourceCode">
+        <section className="section section--soft langs" id="sourceCode">
             <div className="container">
                 <div className="section-head section-head--split">
                     <div>
@@ -24,56 +29,81 @@ export function SourceCode() {
                     </Reveal>
                 </div>
 
-                <ul className="gallery__grid">
-                    {socialLinks.map((link, i) => (
+                <ul className="langs__grid">
+                    {languageCards.map((card, i) => (
                         <Reveal
                             as="li"
-                            key={link.id}
-                            delay={(i % 2) * 0.08}
-                            className={`gallery__cell gallery__cell--${i + 1}`}
+                            key={card.id}
+                            delay={(i % 5) * 0.06}
+                            y={20}
+                            className="langs__cell"
                         >
                             <a
-                                className="gallery__tile"
-                                href={link.url}
+                                className="lang-card"
+                                href={card.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                aria-label={`${link.label} — ${link.hint} (откроется в новой вкладке)`}
+                                style={
+                                    {
+                                        "--lang-color": card.color,
+                                    } as CSSProperties
+                                }
+                                aria-label={`${card.label}: ${card.repo} на GitHub (откроется в новой вкладке)`}
                             >
-                                <span className="gallery__tile-top mono">
-                                    {link.label}
-                                </span>
-                                <span className="gallery__tile-hint">
-                                    {link.hint}
-                                </span>
                                 <span
-                                    className="gallery__tile-arrow"
+                                    className="lang-card__icon"
                                     aria-hidden="true"
                                 >
-                                    <ArrowUpRight size={28} />
+                                    <svg
+                                        viewBox={card.viewBox}
+                                        focusable="false"
+                                    >
+                                        <path d={card.path} />
+                                    </svg>
+                                </span>
+
+                                <span className="lang-card__label">
+                                    {card.label}
+                                </span>
+                                <span className="lang-card__repo mono">
+                                    {card.repo}
+                                </span>
+
+                                <span
+                                    className="lang-card__arrow"
+                                    aria-hidden="true"
+                                >
+                                    <ArrowUpRight size={20} />
                                 </span>
                             </a>
                         </Reveal>
                     ))}
                 </ul>
+
+                <Reveal delay={0.1}>
+                    <a
+                        className="link-arrow langs__all"
+                        href={orgUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Все репозитории{" "}
+                        <ArrowUpRight size={16} aria-hidden="true" />
+                    </a>
+                </Reveal>
             </div>
 
-            <Marquee
-                className="gallery__marquee"
-                direction="right"
-                duration={38}
-            >
+            <Marquee className="langs__marquee" direction="right" duration={38}>
                 {[
-                    "как это было",
-                    "лица",
-                    "раунды",
-                    "ретро",
-                    "пары",
-                    "код",
-                    "чай",
-                    "ноль строк кода осталось",
+                    "game of life",
+                    "gilded kata",
+                    "ping-pong pairs",
+                    "red-green-refactor",
+                    "12 раундов",
+                    "код удалится",
                 ].map((word) => (
                     <span
-                        className="gallery__marquee-word outline-text"
+                        className="langs__marquee-word outline-text"
                         key={word}
                     >
                         {word}

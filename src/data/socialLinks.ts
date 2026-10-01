@@ -14,36 +14,18 @@ export const socialLinks: SocialLink[] = [
   {
     id: 'telegram',
     label: 'Telegram',
-    hint: 'чат и анонсы встреч',
-    // TODO: заменить на реальный канал сообщества
-    url: 'https://t.me/code_retreat_russia',
-  },
-  {
-    id: 'vk',
-    label: 'ВКонтакте',
-    hint: 'фотоальбомы мероприятий',
-    // TODO: заменить на реальную группу
-    url: 'https://vk.com/code_retreat_russia',
-  },
-  {
-    id: 'youtube',
-    label: 'YouTube',
-    hint: 'записи разборов',
-    // TODO: заменить на реальный канал
-    url: 'https://youtube.com/@code_retreat_russia',
+    hint: 'сообщество Technical Excellence RU',
+    url: 'https://t.me/technical_excellence_ru',
   },
   {
     id: 'github',
     label: 'GitHub',
-    hint: 'задачи для практик',
-    // TODO: заменить на реальную организацию
+    hint: 'шаблоны репозиториев',
     url: 'https://github.com/code-retreat-russia',
   },
 ];
 
 export const externalLinks = {
-  // Что такое code retreat в оригинальном формате
-  coderetreat: 'https://coderetreat.org',
-  // Соседнее сообщество, чей визуальный язык нам близок
-  scrumRu: 'https://scrum.ru/code_retreat_2026',
+  codeRetreat: 'https://coderetreat.org',
+  scrumRu: 'https://scrum.ru/',
 } as const;
