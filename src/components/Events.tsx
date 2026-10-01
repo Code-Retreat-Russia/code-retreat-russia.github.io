@@ -52,7 +52,7 @@ export function Events() {
       <div className="container">
         <div className="section-head section-head--split">
           <div>
-            <p className="kicker">05 — хроника</p>
+            <p className="kicker">06 — атмосфера</p>
             <h2 className="display display--xl">Где и как мы собирались</h2>
           </div>
           <Reveal delay={0.1}>

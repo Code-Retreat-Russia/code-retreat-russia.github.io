@@ -6,14 +6,14 @@
  */
 
 export interface Stat {
-  value: string;
-  label: string;
+    value: string;
+    label: string;
 }
 
 export const communityStats: Stat[] = [
-  { value: 'NN', label: 'встреч проведено' },
-  { value: 'NNN', label: 'разработчиков прошли через сессии' },
-  { value: 'N', label: 'городов, где мы собирались' },
-  { value: 'N', label: 'тренеров ведут практики' },
-  { value: 'NN', label: 'часов кода в год' },
+    { value: "5+", label: "встреч проведено" },
+    { value: "200+", label: "разработчиков прошли через сессии" },
+    { value: "2+", label: "городов, где мы собирались" },
+    { value: "10+", label: "тренеров ведут практики" },
+    { value: "20+", label: "часов кода в год" },
 ];
