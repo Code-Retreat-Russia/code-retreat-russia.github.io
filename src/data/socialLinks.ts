@@ -13,9 +13,9 @@ export interface SocialLink {
 export const socialLinks: SocialLink[] = [
   {
     id: 'telegram',
-    label: 'Telegram',
+    label: 'Telegram (500+ участников)',
     hint: 'сообщество Technical Excellence RU',
-    url: 'https://t.me/technical_excellence_ru',
+    url: 'https://t.me/technicalexcellenceru',
   },
   {
     id: 'github',
