@@ -14,7 +14,7 @@ export interface CommunityEvent {
     description: string;
     city: string;
     /** Ссылка на фотоальбом (соцсети) */
-    photosUrl: string;
+    photosUrl?: string;
     /** Путь к обложке; если null — рисуется графический плейсхолдер */
     cover?: string | null;
     extraUrl?: string;
@@ -33,15 +33,13 @@ export const events: CommunityEvent[] = [
         cover: "images/events/2026-spb.jpg",
     },
     {
-        id: "2026-moscow",
+        id: "2026-moscow-mts",
         year: "2026",
-        title: "Зимний код-ретрит",
+        title: "Зимний код ретрит",
         description:
             "Три раунда TDD на «Играх в жизнь», ротация пар каждые 60 минут и очень долгий разговор про имена функций.",
         city: "МТС Банк, Москва",
-        // TODO: заменить на реальный фотоальбом
-        photosUrl: "https://vk.com/album-000000000_000000000",
-        cover: "images/events/2026-moscow.jpg",
+        cover: "images/events/2026-moscow-mts.jpg",
     },
     {
         id: "2025-online",
@@ -50,27 +48,39 @@ export const events: CommunityEvent[] = [
         description:
             "Эксперимент на дистанции: шесть команд, общий репозиторий и ретроспектива, которая длилась дольше сессий.",
         city: "Онлайн",
-        photosUrl: "https://vk.com/album-000000000_000000002",
         cover: "images/events/2025-online.jpg",
     },
     {
         id: "2025-moscow",
         year: "2025",
-        title: "Зимний код-ретрит",
-        description:
-            "Первая публичная встреча формата: конвейер пар, раунды без мыши и разбор «что вообще произошло».",
+        title: "Старый новый код",
+        description: "Стартуем год с правильных практик",
         city: "Лемана Тех, Москва",
-        photosUrl: "https://vk.com/album-000000000_000000002",
         cover: "images/events/2025-moscow.jpg",
+        extraUrl: "https://www.youtube.com/watch?v=s6J9YnomDI0",
+        extraLabel: "YouTube",
     },
     {
-        id: "2023-moscow",
+        id: "2023-moscow-t1",
         year: "2023",
-        title: "Осення встреча на высоте",
+        title: "Осенняя встреча на высоте",
         description:
-            "Формат выходного дня: код, код, обсуждения архитектуры и обещение на высоте 23 этажа",
+            "Формат выходного дня: код, код, обсуждения архитектуры и общение на высоте 23 этажа",
         city: "Т1, Москва",
-        photosUrl: "https://vk.com/album-000000000_000000002",
-        cover: "images/events/2023-moscow.jpg",
+        cover: "images/events/2023-moscow-t1.jpg",
+        extraUrl: "https://t.me/T1Holding/1225",
+        extraLabel: "Пост в TG",
+    },
+    {
+        id: "2023-moscow-avito",
+        year: "2023",
+        title: "Февральский митап",
+        description:
+            "Первая публичная встреча формата: конвейер пар, раунды без мыши и разбор «что вообще произошло».",
+        city: "Avito, Москва",
+        cover: "images/events/2023-moscow-avito.jpg",
+        photosUrl: "https://vk.ru/album-152990965_291394522",
+        extraUrl: "https://www.youtube.com/watch?v=ZUNi_IcaVIg",
+        extraLabel: "YouTube",
     },
 ];
