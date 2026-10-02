@@ -8,20 +8,24 @@ export interface SocialLink {
   label: string;
   hint: string;
   url: string;
+  /** Небольшой счётчик-«бабл» на кнопке (например, число участников). */
+  badge?: string;
 }
 
 export const socialLinks: SocialLink[] = [
   {
     id: 'telegram',
-    label: 'Telegram (500+ участников)',
-    hint: 'сообщество Technical Excellence RU',
+    label: 'Cообщество',
+    hint: 'Technical Excellence RU',
     url: 'https://t.me/technicalexcellenceru',
+    badge: '500+ участников',
   },
   {
     id: 'github',
     label: 'GitHub',
     hint: 'шаблоны репозиториев',
     url: 'https://github.com/code-retreat-russia',
+    badge: 'new',
   },
 ];
 
