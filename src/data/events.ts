@@ -29,8 +29,10 @@ export const events: CommunityEvent[] = [
         description:
             "Gilded Kata в парах. К вечеру в комнате осталось ноль вложенных if — и один общий принцип: тесты сначала.",
         city: "Ozon Tech, Санкт-Петербург",
-        photosUrl: "https://vk.ru/techozon?z=album-209665992_311475145",
         cover: "images/events/2026-spb.jpg",
+        photosUrl: "https://vk.ru/techozon?z=album-209665992_311475145",
+        extraUrl: "https://t.me/ozon_tech/s/133",
+        extraLabel: "История в TG"
     },
     {
         id: "2026-moscow-mts",
