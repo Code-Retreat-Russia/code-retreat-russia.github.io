@@ -59,6 +59,7 @@ export const events: CommunityEvent[] = [
         description: "Стартуем год с правильных практик",
         city: "Лемана Тех, Москва",
         cover: "images/events/2025-moscow.jpg",
+        photosUrl: "https://ruitunion.org/posts/2025-01-30-code-retreat-report/",
         extraUrl: "https://www.youtube.com/watch?v=s6J9YnomDI0",
         extraLabel: "YouTube",
     },
