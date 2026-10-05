@@ -72,4 +72,10 @@ export const trainers: Trainer[] = [
         role: "Разработчик, тренер по TDD",
         photo: asset("images/trainers/nikita-chursin.jpg"),
     },
+    {
+        id: "ekaterina-cherepanova",
+        name: "Екатерина Черепанова",
+        role: "Senior Java/Kotlin Developer",
+        photo: asset("images/trainers/ekaterina-cherepanova.jpg"),
+    },
 ];
